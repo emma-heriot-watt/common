@@ -37,6 +37,9 @@ python = "^3.9"
 pydantic = { extras = ["dotenv"], version = "^1.10.2" }
 rich = "^12.6.0"
 loguru = "^0.6.0"
+torch = "^1.11"
+orjson = "^3.8.0"
+numpy = "^1.23.4"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -62,6 +65,9 @@ combine_as_imports = true
 lines_after_imports = 2
 line_length = 99
 known_first_party = ["emma_*"]
+
+[tool.coverage.run]
+omit = ["src/emma_common/logging.py"]
 
 [build-system]
 requires = ["poetry-core"]
