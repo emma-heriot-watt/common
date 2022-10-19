@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/emma-simbot/common/compare/v1.1.0...v1.2.0) (2022-10-19)
+
+
+### Features
+
+* add `EmmaExtractedFeatures` datamodel so that it can be consistent across repos ([#3](https://github.com/emma-simbot/common/issues/3)) ([a4acb45](https://github.com/emma-simbot/common/commit/a4acb4561765604782e453a1e343683656b7a3d3))
+
 ## [1.1.0](https://github.com/emma-simbot/common/compare/v1.0.0...v1.1.0) (2022-10-14)
 
 
