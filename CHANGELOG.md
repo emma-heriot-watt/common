@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0](https://github.com/emma-simbot/common/compare/v1.2.0...v1.3.0) (2022-10-20)
+
+
+### Features
+
+* add the loguru logger into the __init__ so everyone can use it ([5ddb7e3](https://github.com/emma-simbot/common/commit/5ddb7e34aefc9cd39505e0df26973bbbe1ecbb6e))
+
 ## [1.2.0](https://github.com/emma-simbot/common/compare/v1.1.0...v1.2.0) (2022-10-19)
 
 
