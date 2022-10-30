@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0](https://github.com/emma-simbot/common/compare/v1.3.0...v1.4.0) (2022-10-30)
+
+
+### Features
+
+* **logging:** add new arg to enable/disable showing locals in rich tracebacks ([3c98aab](https://github.com/emma-simbot/common/commit/3c98aab67acd64b9f16a371beb918aa6d3dcddcd))
+
+
+### Bug Fixes
+
+* **logging:** handler cannot be None ([178c184](https://github.com/emma-simbot/common/commit/178c1841eeae7e120e4cfcd6bba3c47fab98b5f9))
+* **logging:** make sure log level is uppercase ([692d226](https://github.com/emma-simbot/common/commit/692d22696e88bfd893f01bd187e6f9a8f00354d1))
+
 ## [1.3.0](https://github.com/emma-simbot/common/compare/v1.2.0...v1.3.0) (2022-10-20)
 
 
