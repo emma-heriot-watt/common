@@ -39,7 +39,7 @@ class InterceptHandler(logging.Handler):
 
 
 def setup_logging(
-    default_handler: Optional[logging.Handler],
+    default_handler: logging.Handler,
     log_level: str = "INFO",
     emma_log_level: Optional[str] = None,
 ) -> None:
