@@ -47,10 +47,6 @@ const config = {
 		[
 			"@semantic-release/github",
 			{
-				assets: [
-					{ path: "dist/*.tar.gz", label: "sdist" },
-					{ path: "dist/*.whl", label: "wheel" },
-				],
 				successComment: false,
 				failComment: false,
 				releasedLabels: false,
