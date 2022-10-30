@@ -81,6 +81,7 @@ def setup_logging(
 def setup_rich_logging(
     log_level: str = "INFO",
     emma_log_level: Optional[str] = None,
+    rich_traceback_show_locals: bool = True,
     rich_traceback_suppress_modules: tuple[str, ...] = RICH_TRACEBACK_SUPPRESS_MODULES,
     rich_handler_kwargs: Optional[dict[str, Any]] = None,
 ) -> None:
@@ -92,7 +93,7 @@ def setup_rich_logging(
     rich_handler = RichHandler(
         markup=True,
         rich_tracebacks=True,
-        tracebacks_show_locals=True,
+        tracebacks_show_locals=rich_traceback_show_locals,
         tracebacks_suppress=rich_traceback_suppress_modules,
         **rich_handler_kwargs
     )
