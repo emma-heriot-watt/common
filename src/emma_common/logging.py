@@ -47,6 +47,9 @@ def setup_logging(
 
     If you want to log EMMA modules separately, provide a log level for the `emma_log_level`.
     """
+    if log_level:
+        log_level = log_level.upper()
+
     if emma_log_level:
         emma_log_level = emma_log_level.upper()
 
