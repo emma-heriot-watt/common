@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0](https://github.com/emma-simbot/common/compare/v1.4.0...v1.5.0) (2022-12-01)
+
+
+### Features
+
+* **gunicorn:** add gunicorn-specific objects that are compatible with the logger ([#8](https://github.com/emma-simbot/common/issues/8)) ([e387f13](https://github.com/emma-simbot/common/commit/e387f135cf281673b82ee6db1eb05450b4543aa0))
+
 ## [1.4.0](https://github.com/emma-simbot/common/compare/v1.3.0...v1.4.0) (2022-10-30)
 
 
