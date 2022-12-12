@@ -2,7 +2,7 @@ from loguru import logger
 
 
 try:
-    from watchtower import CloudWatchLogHandler  # noqa: WPS433
+    from watchtower import CloudWatchLogHandler
 
     OPTIONAL_DEPS_NOT_INSTALLED = False
 except ImportError:

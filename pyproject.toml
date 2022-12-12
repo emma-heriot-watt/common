@@ -53,6 +53,7 @@ isort = "^5.10.1"
 pytest-cases = "^3.6.13"
 pytest-xdist = "^2.5.0"
 pytest-cov = "^3.0.0"
+boto3-stubs = {extras = ["essential", "secretsmanager"], version = "^1.26.27"}
 
 
 [tool.poetry.group.api.dependencies]

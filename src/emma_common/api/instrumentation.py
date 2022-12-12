@@ -12,17 +12,15 @@ from loguru import logger
 
 
 try:  # noqa: WPS229
-    from opentelemetry import trace  # noqa: WPS433
-    from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import (  # noqa: WPS433
-        OTLPSpanExporter,
-    )
-    from opentelemetry.instrumentation.botocore import BotocoreInstrumentor  # noqa: WPS433
-    from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor  # noqa: WPS433
-    from opentelemetry.instrumentation.httpx import HTTPXClientInstrumentor  # noqa: WPS433
-    from opentelemetry.instrumentation.logging import LoggingInstrumentor  # noqa: WPS433
-    from opentelemetry.sdk.resources import SERVICE_NAME, Resource  # noqa: WPS433
-    from opentelemetry.sdk.trace import TracerProvider  # noqa: WPS433
-    from opentelemetry.sdk.trace.export import BatchSpanProcessor  # noqa: WPS433
+    from opentelemetry import trace
+    from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+    from opentelemetry.instrumentation.botocore import BotocoreInstrumentor
+    from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+    from opentelemetry.instrumentation.httpx import HTTPXClientInstrumentor
+    from opentelemetry.instrumentation.logging import LoggingInstrumentor
+    from opentelemetry.sdk.resources import SERVICE_NAME, Resource
+    from opentelemetry.sdk.trace import TracerProvider
+    from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
     OPTIONAL_DEPS_NOT_INSTALLED = False
 except ImportError:

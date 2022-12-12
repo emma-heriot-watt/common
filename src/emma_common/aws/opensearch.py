@@ -2,7 +2,7 @@ from loguru import logger
 
 
 try:
-    from opensearch_logger import OpenSearchHandler  # noqa: WPS433
+    from opensearch_logger import OpenSearchHandler
 
     OPTIONAL_DEPS_NOT_INSTALLED = False
 except ImportError:

@@ -8,8 +8,8 @@ from emma_common.logging import InterceptHandler
 
 
 try:
-    from gunicorn.app.base import BaseApplication  # noqa: WPS433
-    from gunicorn.glogging import Logger  # noqa: WPS433
+    from gunicorn.app.base import BaseApplication
+    from gunicorn.glogging import Logger
 except ImportError:
     logger.warning(
         "gunicorn is not installed. If you are using this module, you likely want to install emma-common with the `api` group."
