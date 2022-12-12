@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.0](https://github.com/emma-simbot/common/compare/v1.5.0...v1.6.0) (2022-12-12)
+
+
+### Features
+
+* improve logging and easily instrument APIs ([#10](https://github.com/emma-simbot/common/issues/10)) ([33dda8e](https://github.com/emma-simbot/common/commit/33dda8e4df16392cc2bd9b6f924d845668bc97f3))
+
 ## [1.5.0](https://github.com/emma-simbot/common/compare/v1.4.0...v1.5.0) (2022-12-01)
 
 
