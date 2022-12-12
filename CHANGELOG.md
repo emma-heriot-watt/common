@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.0](https://github.com/emma-simbot/common/compare/v1.6.0...v1.7.0) (2022-12-12)
+
+
+### Features
+
+* support getting secrets from AWS Secrets Manager ([#11](https://github.com/emma-simbot/common/issues/11)) ([f41df86](https://github.com/emma-simbot/common/commit/f41df8660c23359b697d2e19a6c06f43d8a6be8d))
+
 ## [1.6.0](https://github.com/emma-simbot/common/compare/v1.5.0...v1.6.0) (2022-12-12)
 
 
