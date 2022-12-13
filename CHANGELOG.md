@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.0](https://github.com/emma-simbot/common/compare/v1.8.0...v1.9.0) (2022-12-13)
+
+
+### Features
+
+* **logging:** add `PropogateHandler` to automatically send to the default logging module ([b20b48a](https://github.com/emma-simbot/common/commit/b20b48a807261cc968f74e3ef11f9b9e3e3ee8c2))
+
 ## [1.8.0](https://github.com/emma-simbot/common/compare/v1.7.0...v1.8.0) (2022-12-13)
 
 
