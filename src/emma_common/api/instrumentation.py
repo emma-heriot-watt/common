@@ -5,7 +5,6 @@ providing the relevant packages are installed. If they're not installed, the var
 do nothing.
 """
 
-from __future__ import annotations
 
 from fastapi import FastAPI
 from loguru import logger
@@ -59,12 +58,3 @@ def instrument_fastapi_app(app: FastAPI) -> None:
     HTTPXClientInstrumentor().instrument()
     BotocoreInstrumentor().instrument()
     FastAPIInstrumentor.instrument_app(app)
-
-
-def get_tracer() -> trace.Tracer | None:
-    """Get the tracer to use with tracing."""
-    if OPTIONAL_DEPS_NOT_INSTALLED:
-        logger.warning("Production deps not installed. Unable to get the tracer.")
-        return None
-
-    return trace.get_tracer(__name__)
