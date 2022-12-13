@@ -1,13 +1,16 @@
+from __future__ import annotations
+
 import logging
 import os
-from typing import Any, Optional
+from typing import Any
 
 from loguru import logger
 
 from emma_common.logging import InterceptHandler
 
 
-try:
+try:  # noqa: WPS229
+    from fastapi import FastAPI
     from gunicorn.app.base import BaseApplication
     from gunicorn.glogging import Logger
 except ImportError:
@@ -37,7 +40,7 @@ class GunicornLogger(Logger):  # type: ignore[misc]
 class StandaloneApplication(BaseApplication):  # type: ignore[misc]
     """Gunicorn application."""
 
-    def __init__(self, app: Any, options: Optional[dict[Any, Any]] = None) -> None:
+    def __init__(self, app: Any, options: dict[Any, Any] | None = None) -> None:
         self.options = options or {}
         self.application = app
         super().__init__()
@@ -57,3 +60,20 @@ class StandaloneApplication(BaseApplication):  # type: ignore[misc]
     def load(self) -> Any:
         """Load the application."""
         return self.application
+
+
+def create_gunicorn_server(
+    app: FastAPI, host: str, port: int, workers: int, **kwargs: dict[str, Any]
+) -> StandaloneApplication:
+    """Create a gunicorn server for the API app."""
+    server_config = {
+        "bind": f"{host}:{port}",
+        "workers": workers,
+        "accesslog": "-",
+        "errorlog": "-",
+        "worker_class": "uvicorn.workers.UvicornWorker",
+        "logger_class": GunicornLogger,
+        **kwargs,
+    }
+    server = StandaloneApplication(app, server_config)
+    return server
