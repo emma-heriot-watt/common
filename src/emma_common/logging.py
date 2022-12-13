@@ -14,6 +14,14 @@ LOGGER_FORMAT = (
 RICH_TRACEBACK_SUPPRESS_MODULES = ("starlette", "click", "uvicorn", "fastapi")
 
 
+class PropagateHandler(logging.Handler):
+    """Logger handler to send logs to the `logging` module."""
+
+    def emit(self, record: logging.LogRecord) -> None:
+        """Emit method for logging."""
+        logging.getLogger(record.name).handle(record)
+
+
 class InterceptHandler(logging.Handler):
     """Logger Handler to intercept log messages from all callers."""
 
