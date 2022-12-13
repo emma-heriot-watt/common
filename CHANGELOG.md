@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.0](https://github.com/emma-simbot/common/compare/v1.7.0...v1.8.0) (2022-12-13)
+
+
+### Features
+
+* **gunicorn:** add function to create a gunicorn server for the api app ([4ec1721](https://github.com/emma-simbot/common/commit/4ec1721d387120c27eff56eac140b748dc7411b4))
+
 ## [1.7.0](https://github.com/emma-simbot/common/compare/v1.6.0...v1.7.0) (2022-12-12)
 
 
