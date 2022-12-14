@@ -74,8 +74,8 @@ class InstrumentedInterceptHandler(InterceptHandler):
         """
         try:
             return {
-                "span_id": record.otelSpanID,  # type: ignore[attr-defined]
-                "trace_id": record.otelTraceID,  # type: ignore[attr-defined]
+                "otelSpanID": record.otelSpanID,  # type: ignore[attr-defined]
+                "otelTraceID": record.otelTraceID,  # type: ignore[attr-defined]
             }
         except Exception:
             return {}

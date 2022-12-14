@@ -39,7 +39,7 @@ def add_cloudwatch_handler_to_logger(
 
     if enable_trace_logging:
         log_handler.formatter.add_log_record_attrs.extend(  # pyright: ignore
-            ["span_id", "trace_id"]
+            ["otelSpanID", "otelTraceID"]
         )
 
     logger.add(log_handler, format="{message} | {extra}")
