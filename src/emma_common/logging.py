@@ -1,6 +1,7 @@
 import logging
 import os
-from typing import Any, Optional, Union
+from pathlib import Path
+from typing import Any, Optional, TextIO, Union
 
 from loguru import logger
 from rich.logging import RichHandler
@@ -53,7 +54,7 @@ class InterceptHandler(logging.Handler):
 
 
 def setup_logging(
-    sink: logging.Handler,
+    sink: Union[logging.Handler, str, Path, TextIO],
     root_handler: Optional[InterceptHandler] = None,
     log_level: str = "INFO",
     emma_log_level: Optional[str] = None,
@@ -115,4 +116,4 @@ def setup_rich_logging(
         tracebacks_suppress=rich_traceback_suppress_modules,
         **rich_handler_kwargs
     )
-    return setup_logging(rich_handler, log_level=log_level, emma_log_level=emma_log_level)
+    return setup_logging(sink=rich_handler, log_level=log_level, emma_log_level=emma_log_level)
