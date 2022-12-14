@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.0](https://github.com/emma-simbot/common/compare/v1.10.0...v1.11.0) (2022-12-14)
+
+
+### Features
+
+* **logging:** improve typing for `setup_logging` function ([58fc214](https://github.com/emma-simbot/common/commit/58fc214899aea37a7dedc2b08b3252868f074ffd))
+
+
+### Bug Fixes
+
+* **logging:** allow any handler to be the `root_handler` ([2d74796](https://github.com/emma-simbot/common/commit/2d74796b2b3555338fddb66ae96e3cdeff9a42be))
+
 ## [1.10.0](https://github.com/emma-simbot/common/compare/v1.9.0...v1.10.0) (2022-12-14)
 
 
