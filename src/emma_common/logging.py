@@ -43,11 +43,18 @@ class InterceptHandler(logging.Handler):
                 frame = frame.f_back
                 depth += 1
 
-        logger.opt(depth=depth, exception=record.exc_info).log(level, record.getMessage())
+        logger.bind(**self._bind(record)).opt(depth=depth, exception=record.exc_info).log(
+            level, record.getMessage()
+        )
+
+    def _bind(self, record: logging.LogRecord) -> dict[str, Any]:
+        """Add kwargs to the logged output."""
+        return {}
 
 
 def setup_logging(
-    default_handler: logging.Handler,
+    sink: logging.Handler,
+    root_handler: Optional[InterceptHandler] = None,
     log_level: str = "INFO",
     emma_log_level: Optional[str] = None,
 ) -> None:
@@ -55,6 +62,9 @@ def setup_logging(
 
     If you want to log EMMA modules separately, provide a log level for the `emma_log_level`.
     """
+    if not root_handler:
+        root_handler = InterceptHandler()
+
     if log_level:
         log_level = log_level.upper()
 
@@ -62,7 +72,7 @@ def setup_logging(
         emma_log_level = emma_log_level.upper()
 
     # intercept everything at the root logger
-    logging.root.handlers = [InterceptHandler()]
+    logging.root.handlers = [root_handler]
     logging.root.setLevel(logging.getLevelName(log_level))
 
     # remove every other logger's handlers
@@ -79,7 +89,7 @@ def setup_logging(
     logger.configure(
         handlers=[
             {
-                "sink": default_handler,
+                "sink": sink,
                 "format": LOGGER_FORMAT,
             }
         ]

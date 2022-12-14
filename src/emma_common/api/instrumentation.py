@@ -5,9 +5,13 @@ providing the relevant packages are installed. If they're not installed, the var
 do nothing.
 """
 
+from logging import LogRecord
+from typing import Any
 
 from fastapi import FastAPI
 from loguru import logger
+
+from emma_common.logging import InterceptHandler
 
 
 try:  # noqa: WPS229
@@ -25,7 +29,7 @@ try:  # noqa: WPS229
 except ImportError:
     OPTIONAL_DEPS_NOT_INSTALLED = True
     logger.warning(
-        "Unable to import packages for instrumentation. Ensure you have installed emma-common with the `production` group."
+        "Unable to import packages for instrumentation. Ensure you have installed emma-common with the `api` group."
     )
 
 
@@ -58,3 +62,20 @@ def instrument_fastapi_app(app: FastAPI) -> None:
     HTTPXClientInstrumentor().instrument()
     BotocoreInstrumentor().instrument()
     FastAPIInstrumentor.instrument_app(app)
+
+
+class InstrumentedInterceptHandler(InterceptHandler):
+    """Customised version of the InterceptHandler for the instrumented API."""
+
+    def _bind(self, record: LogRecord) -> dict[str, Any]:
+        """Add span and trace information to the log.
+
+        After being instrumented, this information is available to the application.
+        """
+        try:
+            return {
+                "otelSpanID": record.otelSpanID,  # type: ignore[attr-defined]
+                "otelTraceID": record.otelTraceID,  # type: ignore[attr-defined]
+            }
+        except Exception:
+            return {}
