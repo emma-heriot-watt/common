@@ -55,7 +55,7 @@ class InterceptHandler(logging.Handler):
 
 def setup_logging(
     sink: Union[logging.Handler, str, Path, TextIO],
-    root_handler: Optional[InterceptHandler] = None,
+    root_handler: Optional[logging.Handler] = None,
     log_level: str = "INFO",
     emma_log_level: Optional[str] = None,
 ) -> None:
