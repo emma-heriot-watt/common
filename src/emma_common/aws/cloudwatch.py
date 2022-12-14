@@ -13,7 +13,11 @@ except ImportError:
 
 
 def add_cloudwatch_handler_to_logger(
-    boto3_profile_name: str, log_stream_name: str, log_group_name: str, send_interval: int = 1
+    boto3_profile_name: str,
+    log_stream_name: str,
+    log_group_name: str,
+    send_interval: int = 1,
+    enable_trace_logging: bool = False,
 ) -> None:
     """Add the AWS CloudWatch logger handler to send application logs to CloudWatch."""
     if OPTIONAL_DEPS_NOT_INSTALLED:
@@ -32,4 +36,10 @@ def add_cloudwatch_handler_to_logger(
         "lineno",
         "process",
     ]
+
+    if enable_trace_logging:
+        log_handler.formatter.add_log_record_attrs.extend(  # pyright: ignore
+            ["otelSpanID", "otelTraceID"]
+        )
+
     logger.add(log_handler, format="{message} | {extra}")
