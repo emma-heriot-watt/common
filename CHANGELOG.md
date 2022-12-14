@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.0](https://github.com/emma-simbot/common/compare/v1.9.0...v1.10.0) (2022-12-14)
+
+
+### Features
+
+* **deps:** make `api` and `aws` group optional ([e36bb3e](https://github.com/emma-simbot/common/commit/e36bb3ebfa757aeb6ed5368ba34ae8fbc89c9074))
+* **logging:** create InterceptHandler for instrumented logging ([7671966](https://github.com/emma-simbot/common/commit/7671966e9700a784dad93b5c0f6588bf2d4e434b))
+
 ## [1.9.0](https://github.com/emma-simbot/common/compare/v1.8.0...v1.9.0) (2022-12-13)
 
 
