@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.0](https://github.com/emma-simbot/common/compare/v1.11.0...v1.12.0) (2022-12-14)
+
+
+### Features
+
+* **cloudwatch logger:** add option to enable trace logging to cloudwatch logs ([3f03571](https://github.com/emma-simbot/common/commit/3f0357131a0535492b3bb2934297b0df0a5d5d42))
+
 ## [1.11.0](https://github.com/emma-simbot/common/compare/v1.10.0...v1.11.0) (2022-12-14)
 
 
