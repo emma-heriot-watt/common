@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.1](https://github.com/emma-simbot/common/compare/v1.12.0...v1.12.1) (2022-12-16)
+
+
+### Bug Fixes
+
+* **deps:** allow torch from 1.10.0 ([1864d3c](https://github.com/emma-simbot/common/commit/1864d3ca4af7f407e195df229fbafc7a6dd72d83))
+* **deps:** unconstrain torch version but prevent 1.13.0 ([ebaaa4a](https://github.com/emma-simbot/common/commit/ebaaa4a1f4bbcb83de2b664bc6f67d8f4dc01691))
+
 ## [1.12.0](https://github.com/emma-simbot/common/compare/v1.11.0...v1.12.0) (2022-12-14)
 
 
