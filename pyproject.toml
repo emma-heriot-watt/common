@@ -37,7 +37,7 @@ python = "^3.9"
 pydantic = { extras = ["dotenv"], version = "^1.10.2" }
 rich = "^12.6.0"
 loguru = "^0.6.0"
-torch = "~1.12"
+torch = "^1.12,!=1.13.0"
 orjson = "^3.8.3"
 
 
