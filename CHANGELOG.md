@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://github.com/emma-simbot/common/compare/v1.12.1...v1.12.2) (2022-12-17)
+
+
+### Bug Fixes
+
+* **deps:** move all api and aws deps to the main group ([051b83e](https://github.com/emma-simbot/common/commit/051b83ebc8ebe3b40d5bd568081198d629f4a2ec))
+
 ## [1.12.1](https://github.com/emma-simbot/common/compare/v1.12.0...v1.12.1) (2022-12-16)
 
 
