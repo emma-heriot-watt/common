@@ -4,19 +4,11 @@ import logging
 import os
 from typing import Any
 
-from loguru import logger
+from fastapi import FastAPI
+from gunicorn.app.base import BaseApplication
+from gunicorn.glogging import Logger
 
 from emma_common.logging import InterceptHandler
-
-
-try:  # noqa: WPS229
-    from fastapi import FastAPI
-    from gunicorn.app.base import BaseApplication
-    from gunicorn.glogging import Logger
-except ImportError:
-    logger.warning(
-        "gunicorn is not installed. If you are using this module, you likely want to install emma-common with the `api` group."
-    )
 
 
 LOG_LEVEL = logging.getLevelName(os.environ.get("LOG_LEVEL", "INFO").upper())

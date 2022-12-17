@@ -1,15 +1,5 @@
 from loguru import logger
-
-
-try:
-    from opensearch_logger import OpenSearchHandler
-
-    OPTIONAL_DEPS_NOT_INSTALLED = False
-except ImportError:
-    OPTIONAL_DEPS_NOT_INSTALLED = True
-    logger.warning(
-        "OpenSearch packages not found. Ensure you have installed emma-common with the `aws` group."
-    )
+from opensearch_logger import OpenSearchHandler
 
 
 def add_opensearch_handler_to_logger(
@@ -20,9 +10,6 @@ def add_opensearch_handler_to_logger(
     flush_frequency: int = 1,
 ) -> None:
     """Add the OpenSearch logger handler to send application logs to OpenSearch."""
-    if OPTIONAL_DEPS_NOT_INSTALLED:
-        logger.warning("AWS deps not installed. Returning without doing anything.")
-        return
     log_handler = OpenSearchHandler(
         index_name=index_name,
         hosts=[host],

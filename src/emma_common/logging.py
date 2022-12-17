@@ -1,13 +1,10 @@
 import logging
-import os
 from pathlib import Path
 from typing import Any, Optional, TextIO, Union
 
 from loguru import logger
 from rich.logging import RichHandler
 
-
-EMMA_LOG_LEVEL = logging.getLevelName(os.environ.get("LOG_LEVEL", "DEBUG").upper())
 
 LOGGER_FORMAT = (
     "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
@@ -51,6 +48,23 @@ class InterceptHandler(logging.Handler):
     def _bind(self, record: logging.LogRecord) -> dict[str, Any]:
         """Add kwargs to the logged output."""
         return {}
+
+
+class InstrumentedInterceptHandler(InterceptHandler):
+    """Customised version of the InterceptHandler for the instrumented API."""
+
+    def _bind(self, record: logging.LogRecord) -> dict[str, Any]:
+        """Add span and trace information to the log.
+
+        After being instrumented, this information is available to the application.
+        """
+        try:
+            return {
+                "otelSpanID": record.otelSpanID,  # type: ignore[attr-defined]
+                "otelTraceID": record.otelTraceID,  # type: ignore[attr-defined]
+            }
+        except Exception:
+            return {}
 
 
 def setup_logging(
