@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.0](https://github.com/emma-simbot/common/compare/v1.12.2...v1.13.0) (2022-12-17)
+
+
+### Features
+
+* cleanup and add some more helper functions ([08da822](https://github.com/emma-simbot/common/commit/08da8229e47a2350be68f4267f41752323e04ff6))
+
+
+### Bug Fixes
+
+* add httpx as a dep ([9fc0f97](https://github.com/emma-simbot/common/commit/9fc0f97a8d9fc866cce9944f0500fcbcce5c1abb))
+* lint errors ([d36a34e](https://github.com/emma-simbot/common/commit/d36a34e6f288f57b4e37963951b992dcc242193c))
+
 ## [1.12.2](https://github.com/emma-simbot/common/compare/v1.12.1...v1.12.2) (2022-12-17)
 
 
