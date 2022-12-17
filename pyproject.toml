@@ -51,6 +51,7 @@ opentelemetry-instrumentation-botocore = "^0.36b0"
 opentelemetry-exporter-otlp-proto-grpc = "^1.14.0,!=1.15.0"
 watchtower = "^3.0.0"
 opensearch-logger = "^1.2.2"
+httpx = "^0.23.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.3.0"
