@@ -36,6 +36,7 @@ def run_instrumentation(app: FastAPI) -> None:
 
 
 def instrument_app(app: FastAPI, service_name: str, otlp_endpoint: str) -> None:
+    """Instrument the API."""
     setup_tracing(service_name=service_name, otlp_endpoint=otlp_endpoint)
     run_instrumentation(app)
 
