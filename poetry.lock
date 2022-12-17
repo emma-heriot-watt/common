@@ -4,7 +4,7 @@
 name = "anyio"
 version = "3.6.2"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.2"
 files = [
@@ -25,7 +25,7 @@ trio = ["trio (>=0.16,<0.22)"]
 name = "asgiref"
 version = "3.5.2"
 description = "ASGI specs, helper code, and adapters"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -70,7 +70,7 @@ tests-no-zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy 
 name = "backoff"
 version = "2.2.1"
 description = "Function decoration for backoff and retry"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7,<4.0"
 files = [
@@ -139,18 +139,18 @@ uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
 name = "boto3"
-version = "1.26.29"
+version = "1.26.32"
 description = "The AWS SDK for Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">= 3.7"
 files = [
-    {file = "boto3-1.26.29-py3-none-any.whl", hash = "sha256:2e5e80daae3873185b046d1fabc13676aea519e891faf4f27ca71d287bc26039"},
-    {file = "boto3-1.26.29.tar.gz", hash = "sha256:4fb4a0ce2679e5dc1719441192b45687654201d5de76224f2c376b689c9ed4aa"},
+    {file = "boto3-1.26.32-py3-none-any.whl", hash = "sha256:672b97a634f3408d455bf94a6dfd59ef0c6150019885bc7107e465f062d58c26"},
+    {file = "boto3-1.26.32.tar.gz", hash = "sha256:e0d6215313b03f09a9a38eccc88c1d3ba9868bcaaeb8b20eeb6d88fc3018b94d"},
 ]
 
 [package.dependencies]
-botocore = ">=1.29.29,<1.30.0"
+botocore = ">=1.29.32,<1.30.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.6.0,<0.7.0"
 
@@ -159,14 +159,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "boto3-stubs"
-version = "1.26.29"
-description = "Type annotations for boto3 1.26.29 generated with mypy-boto3-builder 7.12.0"
+version = "1.26.32"
+description = "Type annotations for boto3 1.26.32 generated with mypy-boto3-builder 7.12.0"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "boto3-stubs-1.26.29.tar.gz", hash = "sha256:3d8293c0c194e8a9ae1333f98361bc6685e7f6a3dc6c0d5dc07a31f1e58a4079"},
-    {file = "boto3_stubs-1.26.29-py3-none-any.whl", hash = "sha256:d4acb587b1ce644b1db0e2a13b1721c02471f0a52bb16a8939c76fbcadb47f22"},
+    {file = "boto3-stubs-1.26.32.tar.gz", hash = "sha256:bb411448a0e9b222b9c1858249a1f0e517decd699455dff832ef27abcb5a1d69"},
+    {file = "boto3_stubs-1.26.32-py3-none-any.whl", hash = "sha256:dc86bc55478649304b4714cd1e9a203fbda14d31e74c037be852dfc770e7439e"},
 ]
 
 [package.dependencies]
@@ -217,7 +217,7 @@ backup-gateway = ["mypy-boto3-backup-gateway (>=1.26.0,<1.27.0)"]
 backupstorage = ["mypy-boto3-backupstorage (>=1.26.0,<1.27.0)"]
 batch = ["mypy-boto3-batch (>=1.26.0,<1.27.0)"]
 billingconductor = ["mypy-boto3-billingconductor (>=1.26.0,<1.27.0)"]
-boto3 = ["boto3 (==1.26.29)", "botocore (==1.29.29)"]
+boto3 = ["boto3 (==1.26.32)", "botocore (==1.29.32)"]
 braket = ["mypy-boto3-braket (>=1.26.0,<1.27.0)"]
 budgets = ["mypy-boto3-budgets (>=1.26.0,<1.27.0)"]
 ce = ["mypy-boto3-ce (>=1.26.0,<1.27.0)"]
@@ -523,14 +523,14 @@ xray = ["mypy-boto3-xray (>=1.26.0,<1.27.0)"]
 
 [[package]]
 name = "botocore"
-version = "1.29.29"
+version = "1.29.32"
 description = "Low-level, data-driven core of boto 3."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">= 3.7"
 files = [
-    {file = "botocore-1.29.29-py3-none-any.whl", hash = "sha256:dca2daf108aae6c847d8ec99b7e918b46ae81713bf70b2199ab94627faf935a1"},
-    {file = "botocore-1.29.29.tar.gz", hash = "sha256:97a6d059e688ff9caa7c0a4e30cc58fa27be8bf3347578ce7c62fb808380fb55"},
+    {file = "botocore-1.29.32-py3-none-any.whl", hash = "sha256:b1a65edca151665a6844bf9f317440e31d8d5e4cbce3477f2661462e20c213b1"},
+    {file = "botocore-1.29.32.tar.gz", hash = "sha256:27bc3903f7f8c813efd1605ff13ffdfca2c37dc78cadfa488cfda78fca323deb"},
 ]
 
 [package.dependencies]
@@ -543,14 +543,14 @@ crt = ["awscrt (==0.15.3)"]
 
 [[package]]
 name = "botocore-stubs"
-version = "1.29.29"
+version = "1.29.32"
 description = "Type annotations and code completion for botocore"
 category = "dev"
 optional = false
 python-versions = ">=3.7,<4.0"
 files = [
-    {file = "botocore_stubs-1.29.29-py3-none-any.whl", hash = "sha256:a70286592cc8e23ab2abf6ba60a36e1efa865c42bf6a1daed6d7356faa8ae57b"},
-    {file = "botocore_stubs-1.29.29.tar.gz", hash = "sha256:c017f9213a30077ebff8a848a29978536f026c320a12965aa8e915accd9c4557"},
+    {file = "botocore_stubs-1.29.32-py3-none-any.whl", hash = "sha256:64eccd9c6a4de8ef3c14a3ca48867cdf7b2badc86b43868c8be35d9caf798479"},
+    {file = "botocore_stubs-1.29.32.tar.gz", hash = "sha256:af70fca7dc256cb0ba95a90a50da96bc41137c28910398ed4472d4de47663b19"},
 ]
 
 [package.dependencies]
@@ -560,7 +560,7 @@ types-awscrt = "*"
 name = "certifi"
 version = "2022.12.7"
 description = "Python package for providing Mozilla's CA Bundle."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -584,7 +584,7 @@ files = [
 name = "charset-normalizer"
 version = "2.1.1"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.0"
 files = [
@@ -734,7 +734,7 @@ makefun = ">=1.5.0"
 name = "deprecated"
 version = "1.2.13"
 description = "Python @deprecated decorator to deprecate old python classes, functions or methods."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 files = [
@@ -818,7 +818,7 @@ testing = ["pre-commit"]
 name = "fastapi"
 version = "0.88.0"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1114,7 +1114,7 @@ gitdb = ">=4.0.1,<5"
 name = "googleapis-common-protos"
 version = "1.57.0"
 description = "Common protobufs used in Google APIs"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1132,7 +1132,7 @@ grpc = ["grpcio (>=1.44.0,<2.0.0dev)"]
 name = "grpcio"
 version = "1.51.1"
 description = "HTTP/2-based RPC framework"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1190,7 +1190,7 @@ protobuf = ["grpcio-tools (>=1.51.1)"]
 name = "gunicorn"
 version = "20.1.0"
 description = "WSGI HTTP Server for UNIX"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 files = [
@@ -1209,14 +1209,14 @@ tornado = ["tornado (>=0.2)"]
 
 [[package]]
 name = "identify"
-version = "2.5.9"
+version = "2.5.10"
 description = "File identification library for Python"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "identify-2.5.9-py2.py3-none-any.whl", hash = "sha256:a390fb696e164dbddb047a0db26e57972ae52fbd037ae68797e5ae2f4492485d"},
-    {file = "identify-2.5.9.tar.gz", hash = "sha256:906036344ca769539610436e40a684e170c3648b552194980bb7b617a8daeb9f"},
+    {file = "identify-2.5.10-py2.py3-none-any.whl", hash = "sha256:fb7c2feaeca6976a3ffa31ec3236a6911fbc51aec9acc111de2aed99f244ade2"},
+    {file = "identify-2.5.10.tar.gz", hash = "sha256:dce9e31fee7dbc45fea36a9e855c316b8fbf807e65a862f160840bb5a2bf5dfd"},
 ]
 
 [package.extras]
@@ -1226,7 +1226,7 @@ license = ["ukkonen"]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 files = [
@@ -1248,14 +1248,14 @@ files = [
 
 [[package]]
 name = "isort"
-version = "5.11.2"
+version = "5.11.3"
 description = "A Python utility / library to sort Python imports."
 category = "dev"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "isort-5.11.2-py3-none-any.whl", hash = "sha256:e486966fba83f25b8045f8dd7455b0a0d1e4de481e1d7ce4669902d9fb85e622"},
-    {file = "isort-5.11.2.tar.gz", hash = "sha256:dd8bbc5c0990f2a095d754e50360915f73b4c26fc82733eb5bfc6b48396af4d2"},
+    {file = "isort-5.11.3-py3-none-any.whl", hash = "sha256:83155ffa936239d986b0f190347a3f2285f42a9b9e1725c89d865b27dd0627e5"},
+    {file = "isort-5.11.3.tar.gz", hash = "sha256:a8ca25fbfad0f7d5d8447a4314837298d9f6b23aed8618584c894574f626b64b"},
 ]
 
 [package.extras]
@@ -1268,7 +1268,7 @@ requirements-deprecated-finder = ["pip-api", "pipreqs"]
 name = "jmespath"
 version = "1.0.1"
 description = "JSON Matching Expressions"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1579,7 +1579,7 @@ wheel = "*"
 name = "opensearch-logger"
 version = "1.2.2"
 description = "OpenSearch logging handler"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -1597,7 +1597,7 @@ dev = ["bump2version", "flake8", "flake8-blind-except", "flake8-bugbear", "flake
 name = "opensearch-py"
 version = "2.0.1"
 description = "Python low-level client for OpenSearch"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4"
 files = [
@@ -1619,7 +1619,7 @@ docs = ["myst-parser", "sphinx", "sphinx-copybutton", "sphinx-rtd-theme"]
 name = "opentelemetry-api"
 version = "1.15.0"
 description = "OpenTelemetry Python API"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1635,7 +1635,7 @@ setuptools = ">=16.0"
 name = "opentelemetry-distro"
 version = "0.36b0"
 description = "OpenTelemetry Python Distro"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1655,7 +1655,7 @@ otlp = ["opentelemetry-exporter-otlp (==1.15.0)"]
 name = "opentelemetry-exporter-otlp-proto-grpc"
 version = "1.14.0"
 description = "OpenTelemetry Collector Protobuf over gRPC Exporter"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1678,7 +1678,7 @@ test = ["pytest-grpc"]
 name = "opentelemetry-instrumentation"
 version = "0.36b0"
 description = "Instrumentation Tools & Auto Instrumentation for OpenTelemetry Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1695,7 +1695,7 @@ wrapt = ">=1.0.0,<2.0.0"
 name = "opentelemetry-instrumentation-asgi"
 version = "0.36b0"
 description = "ASGI instrumentation for OpenTelemetry"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1718,7 +1718,7 @@ test = ["opentelemetry-instrumentation-asgi[instruments]", "opentelemetry-test-u
 name = "opentelemetry-instrumentation-botocore"
 version = "0.36b0"
 description = "OpenTelemetry Botocore instrumentation"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1739,7 +1739,7 @@ test = ["markupsafe (==2.0.1)", "moto[all] (>=2.2.6,<2.3.0)", "opentelemetry-ins
 name = "opentelemetry-instrumentation-fastapi"
 version = "0.36b0"
 description = "OpenTelemetry FastAPI Instrumentation"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1762,7 +1762,7 @@ test = ["httpx (>=0.22,<1.0)", "opentelemetry-instrumentation-fastapi[instrument
 name = "opentelemetry-instrumentation-httpx"
 version = "0.36b0"
 description = "OpenTelemetry HTTPX Instrumentation"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1783,7 +1783,7 @@ test = ["opentelemetry-instrumentation-httpx[instruments]", "opentelemetry-sdk (
 name = "opentelemetry-instrumentation-logging"
 version = "0.36b0"
 description = "OpenTelemetry Logging instrumentation"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 files = [
@@ -1802,7 +1802,7 @@ test = ["opentelemetry-test-utils (==0.36b0)"]
 name = "opentelemetry-instrumentation-system-metrics"
 version = "0.36b0"
 description = "OpenTelemetry System Metrics Instrumentation"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1823,7 +1823,7 @@ test = ["opentelemetry-instrumentation-system-metrics[instruments]", "openteleme
 name = "opentelemetry-instrumentation-urllib3"
 version = "0.36b0"
 description = "OpenTelemetry urllib3 instrumentation"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1846,7 +1846,7 @@ test = ["httpretty (>=1.0,<2.0)", "opentelemetry-instrumentation-urllib3[instrum
 name = "opentelemetry-proto"
 version = "1.14.0"
 description = "OpenTelemetry Python Proto"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1861,7 +1861,7 @@ protobuf = ">=3.13,<4.0"
 name = "opentelemetry-sdk"
 version = "1.15.0"
 description = "OpenTelemetry Python SDK"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1879,7 +1879,7 @@ typing-extensions = ">=3.7.4"
 name = "opentelemetry-semantic-conventions"
 version = "0.36b0"
 description = "OpenTelemetry Semantic Conventions"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1891,7 +1891,7 @@ files = [
 name = "opentelemetry-util-http"
 version = "0.36b0"
 description = "Web util for OpenTelemetry"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -2091,7 +2091,7 @@ virtualenv = ">=20.0.8"
 name = "protobuf"
 version = "3.20.3"
 description = "Protocol Buffers"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -2123,7 +2123,7 @@ files = [
 name = "psutil"
 version = "5.9.4"
 description = "Cross-platform lib for process and system monitoring in Python."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 files = [
@@ -2370,7 +2370,7 @@ testing = ["filelock"]
 name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 files = [
@@ -2443,7 +2443,7 @@ files = [
 name = "requests"
 version = "2.28.1"
 description = "Python HTTP for Humans."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7, <4"
 files = [
@@ -2498,7 +2498,7 @@ jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
 name = "s3transfer"
 version = "0.6.0"
 description = "An Amazon S3 Transfer Manager"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">= 3.7"
 files = [
@@ -2533,7 +2533,7 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 files = [
@@ -2557,7 +2557,7 @@ files = [
 name = "sniffio"
 version = "1.3.0"
 description = "Sniff out which async library your code is running under"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -2581,7 +2581,7 @@ files = [
 name = "starlette"
 version = "0.22.0"
 description = "The little ASGI library that shines."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -2719,7 +2719,7 @@ files = [
 name = "urllib3"
 version = "1.26.13"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 files = [
@@ -2757,7 +2757,7 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 name = "watchtower"
 version = "3.0.0"
 description = "Python CloudWatch Logging"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -2838,7 +2838,7 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 name = "wrapt"
 version = "1.14.1"
 description = "Module for decorators, wrappers and monkey patching."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 files = [
@@ -2911,4 +2911,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "948b1b64631a7cd7c39c736c3e62e7812e1a44232bd07df05615e95defd78a9f"
+content-hash = "389140a4b74e61502c654e50d46ad6b6d4113b04fca3310c349d986d1ce277e8"

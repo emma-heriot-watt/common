@@ -39,7 +39,18 @@ rich = "^12.6.0"
 loguru = "^0.6.0"
 torch = "^1.10,!=1.13.0"
 orjson = "^3.8.3"
-
+gunicorn = "^20.1.0"
+fastapi = "^0.88.0"
+opentelemetry-distro = "^0.36b0"
+opentelemetry-instrumentation-fastapi = "^0.36b0"
+opentelemetry-instrumentation-logging = "^0.36b0"
+opentelemetry-instrumentation-httpx = "^0.36b0"
+opentelemetry-instrumentation-urllib3 = "^0.36b0"
+opentelemetry-instrumentation-system-metrics = "^0.36b0"
+opentelemetry-instrumentation-botocore = "^0.36b0"
+opentelemetry-exporter-otlp-proto-grpc = "^1.14.0,!=1.15.0"
+watchtower = "^3.0.0"
+opensearch-logger = "^1.2.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.3.0"
@@ -54,28 +65,6 @@ pytest-cases = "^3.6.13"
 pytest-xdist = "^2.5.0"
 pytest-cov = "^3.0.0"
 boto3-stubs = { extras = ["essential", "secretsmanager"], version = "^1.26.27" }
-
-[tool.poetry.group.api]
-optional = true
-
-[tool.poetry.group.api.dependencies]
-gunicorn = "^20.1.0"
-fastapi = "^0.88.0"
-opentelemetry-distro = "^0.36b0"
-opentelemetry-instrumentation-fastapi = "^0.36b0"
-opentelemetry-instrumentation-logging = "^0.36b0"
-opentelemetry-instrumentation-httpx = "^0.36b0"
-opentelemetry-instrumentation-urllib3 = "^0.36b0"
-opentelemetry-instrumentation-system-metrics = "^0.36b0"
-opentelemetry-instrumentation-botocore = "^0.36b0"
-opentelemetry-exporter-otlp-proto-grpc = "^1.14.0,!=1.15.0"
-
-[tool.poetry.group.aws]
-optional = true
-
-[tool.poetry.group.aws.dependencies]
-watchtower = "^3.0.0"
-opensearch-logger = "^1.2.2"
 
 [tool.black]
 line-length = 99
