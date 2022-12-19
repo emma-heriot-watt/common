@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.1](https://github.com/emma-simbot/common/compare/v1.13.0...v1.13.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* install all deps with fastapi ([e0ebbba](https://github.com/emma-simbot/common/commit/e0ebbbaa93e3120aed4fe66154431dd0cb974c05))
+
 ## [1.13.0](https://github.com/emma-simbot/common/compare/v1.12.2...v1.13.0) (2022-12-17)
 
 
