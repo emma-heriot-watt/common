@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.2](https://github.com/emma-simbot/common/compare/v1.13.1...v1.13.2) (2022-12-23)
+
+
+### Bug Fixes
+
+* explicitly do not install otel instrumentation v0.36b0 ([86d5ecf](https://github.com/emma-simbot/common/commit/86d5ecf6ce739e5c403990f48318e6b02215e058))
+* set the worker timeout to 60 secs ([5a7b1cf](https://github.com/emma-simbot/common/commit/5a7b1cf4a3048fdb9997fcdad2b1822cef52840c))
+
 ## [1.13.1](https://github.com/emma-simbot/common/compare/v1.13.0...v1.13.1) (2022-12-19)
 
 
