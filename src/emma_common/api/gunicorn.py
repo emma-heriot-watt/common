@@ -65,6 +65,7 @@ def create_gunicorn_server(
         "errorlog": "-",
         "worker_class": "uvicorn.workers.UvicornWorker",
         "logger_class": GunicornLogger,
+        "timeout": 60,
         **kwargs,
     }
     server = StandaloneApplication(app, server_config)
