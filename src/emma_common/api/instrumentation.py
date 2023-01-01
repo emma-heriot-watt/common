@@ -6,12 +6,16 @@ do nothing.
 """
 from fastapi import FastAPI
 from loguru import logger
-from opentelemetry import trace
+from opentelemetry import metrics, trace
+from opentelemetry.exporter.otlp.proto.grpc.metric_exporter import OTLPMetricExporter
 from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
 from opentelemetry.instrumentation.botocore import BotocoreInstrumentor
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 from opentelemetry.instrumentation.httpx import HTTPXClientInstrumentor
 from opentelemetry.instrumentation.logging import LoggingInstrumentor
+from opentelemetry.instrumentation.system_metrics import SystemMetricsInstrumentor
+from opentelemetry.sdk.metrics import MeterProvider
+from opentelemetry.sdk.metrics.export import PeriodicExportingMetricReader
 from opentelemetry.sdk.resources import SERVICE_NAME, SERVICE_NAMESPACE, SERVICE_VERSION, Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
@@ -40,11 +44,21 @@ def setup_tracing(otlp_endpoint: str, resource: Resource) -> None:
     trace.set_tracer_provider(provider)
 
 
+def setup_metrics(otlp_endpoint: str, resource: Resource) -> None:
+    """Setup metrics for the API."""
+    reader = PeriodicExportingMetricReader(
+        OTLPMetricExporter(endpoint=otlp_endpoint, insecure=True)
+    )
+    provider = MeterProvider(resource=resource, metric_readers=[reader])
+    metrics.set_meter_provider(provider)
+
+
 def run_instrumentation(app: FastAPI) -> None:
     """Instrument everything possible."""
     LoggingInstrumentor().instrument()
     HTTPXClientInstrumentor().instrument()
     BotocoreInstrumentor().instrument()
+    SystemMetricsInstrumentor().instrument()
     FastAPIInstrumentor.instrument_app(app)
 
 
@@ -63,6 +77,7 @@ def instrument_app(
         service_namespace=service_namespace,
     )
     setup_tracing(otlp_endpoint=otlp_endpoint, resource=resource)
+    setup_metrics(otlp_endpoint=otlp_endpoint, resource=resource)
     run_instrumentation(app)
 
     logger.info("Application instrumented successfully.")
