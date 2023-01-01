@@ -34,7 +34,7 @@ cmd = "pytest -v --durations=40 --color=yes --junitxml=pytest.xml --cov=src -m '
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pydantic = { extras = ["dotenv"], version = "^1.10.2" }
+pydantic = {version = "^1.10.0", extras = ["dotenv"]}
 rich = "^12.6.0"
 loguru = "^0.6.0"
 torch = "^1.10,!=1.13.0"
