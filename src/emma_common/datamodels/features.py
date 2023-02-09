@@ -39,3 +39,10 @@ class EmmaExtractedFeatures(BaseModel):
             width=raw_response["width"],
             height=raw_response["height"],
         )
+
+    @property
+    def bbox_areas(self) -> torch.Tensor:
+        """Compute the vectorised bbox areas."""
+        width = self.bbox_coords[:, 3] - self.bbox_coords[:, 1]
+        height = self.bbox_coords[:, 2] - self.bbox_coords[:, 0]
+        return width * height
