@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.0](https://github.com/emma-simbot/common/compare/v1.14.0...v1.15.0) (2023-02-09)
+
+
+### Features
+
+* add area computation ([#40](https://github.com/emma-simbot/common/issues/40)) ([9a4b634](https://github.com/emma-simbot/common/commit/9a4b634b412c6904fe895c99b53362ca30ba46cb))
+
 ## [1.14.0](https://github.com/emma-simbot/common/compare/v1.13.2...v1.14.0) (2023-01-01)
 
 
