@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Optional
 
 import torch
 from pydantic import BaseModel
@@ -12,6 +12,7 @@ class EmmaExtractedFeatures(BaseModel):
     bbox_probas: torch.Tensor
     cnn_features: torch.Tensor
     class_labels: list[str]
+    entity_labels: Optional[list[str]] = None
     width: int
     height: int
 
@@ -38,6 +39,7 @@ class EmmaExtractedFeatures(BaseModel):
             class_labels=raw_response["class_labels"],
             width=raw_response["width"],
             height=raw_response["height"],
+            entity_labels=raw_response.get("entity_labels", None),
         )
 
     @property
