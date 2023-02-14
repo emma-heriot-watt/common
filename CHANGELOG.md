@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.0](https://github.com/emma-simbot/common/compare/v1.15.0...v1.16.0) (2023-02-14)
+
+
+### Features
+
+* Optionally include entity labels in extracted features ([#45](https://github.com/emma-simbot/common/issues/45)) ([9a80968](https://github.com/emma-simbot/common/commit/9a80968902a470c5b96de8d8229ca6a90dc2d2b1))
+
 ## [1.15.0](https://github.com/emma-simbot/common/compare/v1.14.0...v1.15.0) (2023-02-09)
 
 
