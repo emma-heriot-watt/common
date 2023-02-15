@@ -17,13 +17,9 @@ class EmmaExtractedFeatures(BaseModel):
     height: int
 
     class Config:
-        """Config for the Model."""
+        """Config for the model class."""
 
-        arbitrary_types_allowed = True
-        json_encoders = {
-            torch.Tensor: lambda tensor: tensor.tolist(),
-            "Tensor": lambda tensor: tensor.tolist(),
-        }
+        arbitrary_types_allowed: bool = True
 
     @classmethod
     def from_raw_response(cls, raw_response: dict[str, Any]) -> "EmmaExtractedFeatures":
