@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/emma-simbot/common/compare/v1.16.0...v2.0.0) (2023-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* use torch pickle as new serialisation format (#46)
+
+### Features
+
+* use torch pickle as new serialisation format ([#46](https://github.com/emma-simbot/common/issues/46)) ([09c4acb](https://github.com/emma-simbot/common/commit/09c4acbd34c72fc8ffafdf06d6a17c0e4473fa90))
+
 ## [1.16.0](https://github.com/emma-simbot/common/compare/v1.15.0...v1.16.0) (2023-02-14)
 
 
