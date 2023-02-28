@@ -70,5 +70,5 @@ known-first-party = ["emma_common"]
 
 
 [per-file-ignores]
-"tests/*" = ["D", "F401", "S101"]
+"tests/*" = ["D", "F401", "S101", "ANN", "INP"]
 "src/**/__init__.py" = ["D", "F401"]
