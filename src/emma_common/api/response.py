@@ -1,9 +1,12 @@
-from collections.abc import Mapping
-from typing import Any, Optional
+from typing import TYPE_CHECKING, Any, Optional
 
 from fastapi import BackgroundTasks, Response
 
 from emma_common.datamodels.torch import TorchDataMixin
+
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 
 class TorchResponse(Response):

@@ -2,10 +2,13 @@ import json
 from contextlib import suppress
 from functools import cache
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-from opentelemetry.sdk.resources import Attributes
 from opentelemetry.semconv.resource import ResourceAttributes
+
+
+if TYPE_CHECKING:
+    from opentelemetry.sdk.resources import Attributes
 
 
 @cache
@@ -36,7 +39,7 @@ def create_resource_attributes() -> Attributes:
     attributes: Attributes = {}
     attributes[ResourceAttributes.OS_TYPE] = "linux"
 
-    with suppress(KeyError):  # noqa: WPS204
+    with suppress(KeyError):
         attributes[ResourceAttributes.SERVICE_INSTANCE_ID] = instance_metadata["instance_id"]
         attributes[ResourceAttributes.HOST_ID] = instance_metadata["instance_id"]
 

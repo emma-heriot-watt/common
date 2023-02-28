@@ -8,9 +8,7 @@ class TorchDataMixin:
     """A utility class containing useful functions for torch serialisation."""
 
     @staticmethod
-    def to_bytes(  # noqa: WPS602
-        raw_object: Any,
-    ) -> bytes:
+    def to_bytes(raw_object: Any) -> bytes:
         """Factory method that builds a byte representation from a raw object."""
         buffer = io.BytesIO()
         torch.save(raw_object, buffer)
@@ -20,7 +18,7 @@ class TorchDataMixin:
         return buffer.read()
 
     @staticmethod
-    def get_object(object_bytes: bytes) -> Any:  # noqa: WPS602
+    def get_object(object_bytes: bytes) -> Any:
         """Loads the object from the byte representation contained in the response body."""
         buffer = io.BytesIO(object_bytes)
 

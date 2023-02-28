@@ -7,6 +7,7 @@ def add_cloudwatch_handler_to_logger(
     log_stream_name: str,
     log_group_name: str,
     send_interval: int = 1,
+    *,
     enable_trace_logging: bool = False,
 ) -> None:
     """Add the AWS CloudWatch logger handler to send application logs to CloudWatch."""

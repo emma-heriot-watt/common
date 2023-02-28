@@ -4,7 +4,8 @@ This module makes handling instrumentation for observability much easier. This w
 providing the relevant packages are installed. If they're not installed, the various functions will
 do nothing.
 """
-from fastapi import FastAPI
+from typing import TYPE_CHECKING
+
 from loguru import logger
 from opentelemetry import metrics, trace
 from opentelemetry.exporter.otlp.proto.grpc.metric_exporter import OTLPMetricExporter
@@ -21,6 +22,10 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
 from emma_common.aws.ec2 import create_resource_attributes
+
+
+if TYPE_CHECKING:
+    from fastapi import FastAPI
 
 
 def create_resource(service_name: str, service_version: str, service_namespace: str) -> Resource:
