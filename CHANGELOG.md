@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/emma-simbot/common/compare/v2.0.0...v2.0.1) (2023-03-01)
+
+
+### Reverts
+
+* Revert "refactor: migrate to ruff for code quality" ([8b1c5cf](https://github.com/emma-simbot/common/commit/8b1c5cfe484ad83ab21cecc3a5e21d3dbd55f5e1))
+
 ## [2.0.0](https://github.com/emma-simbot/common/compare/v1.16.0...v2.0.0) (2023-02-15)
 
 
