@@ -17,7 +17,7 @@ def add_cloudwatch_handler_to_logger(
         log_group_name=log_group_name,
         send_interval=send_interval,
     )
-    log_handler.formatter.add_log_record_attrs = [  # type: ignore[union-attr]
+    log_handler.formatter.add_log_record_attrs = [  # pyright: ignore
         "levelname",
         "funcName",
         "lineno",
@@ -25,7 +25,7 @@ def add_cloudwatch_handler_to_logger(
     ]
 
     if enable_trace_logging:
-        log_handler.formatter.add_log_record_attrs.extend(  # type: ignore[union-attr]
+        log_handler.formatter.add_log_record_attrs.extend(  # pyright: ignore
             ["otelSpanID", "otelTraceID"]
         )
 
