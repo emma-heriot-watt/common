@@ -1,11 +1,8 @@
-from typing import TYPE_CHECKING
+from __future__ import annotations
 
 from boto3.session import Session
-
-
-if TYPE_CHECKING:
-    from mypy_boto3_secretsmanager.client import SecretsManagerClient
-    from mypy_boto3_secretsmanager.type_defs import GetSecretValueResponseTypeDef
+from mypy_boto3_secretsmanager.client import SecretsManagerClient
+from mypy_boto3_secretsmanager.type_defs import GetSecretValueResponseTypeDef
 
 
 def retrieve_secret(

@@ -1,12 +1,10 @@
 import logging
-from typing import TYPE_CHECKING, Any, Optional, TextIO, Union
+from pathlib import Path
+from typing import Any, Optional, TextIO, Union
 
 from loguru import logger
 from rich.logging import RichHandler
 
-
-if TYPE_CHECKING:
-    from pathlib import Path
 
 LOGGER_FORMAT = (
     "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
@@ -47,7 +45,7 @@ class InterceptHandler(logging.Handler):
             level, record.getMessage()
         )
 
-    def _bind(self, record: logging.LogRecord) -> dict[str, Any]:  # noqa: ARG002
+    def _bind(self, record: logging.LogRecord) -> dict[str, Any]:
         """Add kwargs to the logged output."""
         return {}
 
@@ -65,7 +63,7 @@ class InstrumentedInterceptHandler(InterceptHandler):
                 "otelSpanID": record.otelSpanID,  # type: ignore[attr-defined]
                 "otelTraceID": record.otelTraceID,  # type: ignore[attr-defined]
             }
-        except Exception:  # noqa: BLE001
+        except Exception:
             return {}
 
 
@@ -94,7 +92,7 @@ def setup_logging(
 
     # remove every other logger's handlers
     # and propagate to root logger
-    for name in logging.root.manager.loggerDict:
+    for name in logging.root.manager.loggerDict.keys():
         logging.getLogger(name).handlers = []
         logging.getLogger(name).propagate = True
 
@@ -116,7 +114,6 @@ def setup_logging(
 def setup_rich_logging(
     log_level: str = "INFO",
     emma_log_level: Optional[str] = None,
-    *,
     rich_traceback_show_locals: bool = True,
     rich_traceback_suppress_modules: tuple[str, ...] = RICH_TRACEBACK_SUPPRESS_MODULES,
     rich_handler_kwargs: Optional[dict[str, Any]] = None,
@@ -131,6 +128,6 @@ def setup_rich_logging(
         rich_tracebacks=True,
         tracebacks_show_locals=rich_traceback_show_locals,
         tracebacks_suppress=rich_traceback_suppress_modules,
-        **rich_handler_kwargs,
+        **rich_handler_kwargs
     )
     return setup_logging(sink=rich_handler, log_level=log_level, emma_log_level=emma_log_level)

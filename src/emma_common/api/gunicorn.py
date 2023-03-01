@@ -2,16 +2,13 @@ from __future__ import annotations
 
 import logging
 import os
-from typing import TYPE_CHECKING, Any
+from typing import Any
 
+from fastapi import FastAPI
 from gunicorn.app.base import BaseApplication
 from gunicorn.glogging import Logger
 
 from emma_common.logging import InterceptHandler
-
-
-if TYPE_CHECKING:
-    from fastapi import FastAPI
 
 
 LOG_LEVEL = logging.getLevelName(os.environ.get("LOG_LEVEL", "INFO").upper())
@@ -20,7 +17,7 @@ LOG_LEVEL = logging.getLevelName(os.environ.get("LOG_LEVEL", "INFO").upper())
 class GunicornLogger(Logger):  # type: ignore[misc]
     """Logger class for Gunicorn."""
 
-    def setup(self, cfg: Any) -> None:  # noqa: ARG002
+    def setup(self, cfg: Any) -> None:
         """Setup the gunicorn loggers to use loguru."""
         log_handler = InterceptHandler()
 
