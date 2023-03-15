@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/emma-simbot/common/compare/v2.0.1...v2.1.0) (2023-03-15)
+
+
+### Features
+
+* optionally include force stop flag ([#70](https://github.com/emma-simbot/common/issues/70)) ([ccb2d10](https://github.com/emma-simbot/common/commit/ccb2d106a1ba3ff1cfadfdbb30617ee49b78dac4))
+
 ## [2.0.1](https://github.com/emma-simbot/common/compare/v2.0.0...v2.0.1) (2023-03-01)
 
 
