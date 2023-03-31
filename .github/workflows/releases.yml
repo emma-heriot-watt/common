@@ -6,6 +6,8 @@ on:
       - main
 
 env:
+  PACKAGE_NAME: emma-common
+  PACKAGE_LINK: https://github.com/emma-simbot/common
   PYTHON_VERSION: 3.9
 
 jobs:
@@ -80,3 +82,35 @@ jobs:
         run: |
           npm install --no-save @bjoluc/semantic-release-config-poetry
           npx semantic-release
+
+  dispatch:
+    name: Dispatch to EMMA PyPi
+    runs-on: ubuntu-latest
+    needs: [release]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
+      - name: Get current version
+        id: project-version
+        run: |
+          PROJECT_VERSION=$(poetry version | cut -d' ' -f2)
+          echo "PROJECT_VERSION=$PROJECT_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Dispatch
+        uses: pauldraper/workflow-dispatch@v1.5
+        with:
+          repo: emma-simbot/pypi
+          token: ${{ secrets.PAT }}
+          workflow: update.yml
+          inputs: "{'package_name': '${{ env.PACKAGE_NAME }}', 'version':'${{steps.project-version.outputs.PROJECT_VERSION }}', 'link':'git+${{ env.PROJECT_LINK }}'}"
