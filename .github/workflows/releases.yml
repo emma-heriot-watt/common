@@ -1,6 +1,7 @@
 name: Releases
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -101,11 +102,13 @@ jobs:
       - name: Install Poetry
         uses: snok/install-poetry@v1
 
-      - name: Get current version
-        id: project-version
+      - name: Create workflow inputs
+        id: project
         run: |
           PROJECT_VERSION=$(poetry version | cut -d' ' -f2)
+          WORKFLOW_INPUTS="{'package_name': '${{ env.PACKAGE_NAME }}', 'version':'$PROJECT_VERSION', 'link':'git+${{ env.PACKAGE_LINK }}'}"
           echo "PROJECT_VERSION=$PROJECT_VERSION" >> $GITHUB_OUTPUT
+          echo "WORKFLOW_INPUTS=$WORKFLOW_INPUTS" >> $GITHUB_OUTPUT
 
       - name: Dispatch
         uses: pauldraper/workflow-dispatch@v1.5
@@ -113,4 +116,4 @@ jobs:
           repo: emma-simbot/pypi
           token: ${{ secrets.PAT }}
           workflow: update.yml
-          inputs: "{'package_name': '${{ env.PACKAGE_NAME }}', 'version':'${{steps.project-version.outputs.PROJECT_VERSION }}', 'link':'git+${{ env.PROJECT_LINK }}'}"
+          inputs: ${{ steps.project.outputs.WORKFLOW_INPUTS }}
