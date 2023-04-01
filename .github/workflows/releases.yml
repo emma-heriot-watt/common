@@ -106,7 +106,7 @@ jobs:
         id: project
         run: |
           PROJECT_VERSION=$(poetry version | cut -d' ' -f2)
-          WORKFLOW_INPUTS="{'package_name': '${{ env.PACKAGE_NAME }}', 'version':'$PROJECT_VERSION', 'link':'git+${{ env.PACKAGE_LINK }}'}"
+          WORKFLOW_INPUTS="{'package_name': '${{ env.PACKAGE_NAME }}', 'version':'v$PROJECT_VERSION', 'link':'git+${{ env.PACKAGE_LINK }}'}"
           echo "PROJECT_VERSION=$PROJECT_VERSION" >> $GITHUB_OUTPUT
           echo "WORKFLOW_INPUTS=${WORKFLOW_INPUTS//\'/\"}" >> $GITHUB_OUTPUT
 
