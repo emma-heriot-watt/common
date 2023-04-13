@@ -33,6 +33,7 @@ class EmmaPolicyRequest(BaseModel):
     dialogue_history: list[DialogueUtterance]
     environment_history: list[EnvironmentStateTurn]
     force_stop_token: bool = False
+    inventory: Optional[str] = None
 
     @property
     def num_images(self) -> int:
