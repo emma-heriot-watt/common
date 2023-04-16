@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.0](https://github.com/emma-simbot/common/compare/v2.2.0...v2.3.0) (2023-04-16)
+
+
+### Features
+
+* optionally include the entity label in the emma request ([#101](https://github.com/emma-simbot/common/issues/101)) ([6b7bf62](https://github.com/emma-simbot/common/commit/6b7bf62e064d1444e91cfa4d151be71a05cdfec3))
+
 ## [2.2.0](https://github.com/emma-simbot/common/compare/v2.1.1...v2.2.0) (2023-04-13)
 
 
