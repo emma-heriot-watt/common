@@ -34,6 +34,7 @@ class EmmaPolicyRequest(BaseModel):
     environment_history: list[EnvironmentStateTurn]
     force_stop_token: bool = False
     inventory: Optional[str] = None
+    entity_label: Optional[str] = None
 
     @property
     def num_images(self) -> int:
