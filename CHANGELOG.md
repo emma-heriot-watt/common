@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/emma-simbot/common/compare/v2.3.0...v2.3.1) (2023-04-18)
+
+
+### Bug Fixes
+
+* type for kwargs in gunicorn run server function ([768f57a](https://github.com/emma-simbot/common/commit/768f57a4d9089ef14adc466de3fbf9a14474a44a))
+
 ## [2.3.0](https://github.com/emma-simbot/common/compare/v2.2.0...v2.3.0) (2023-04-16)
 
 
