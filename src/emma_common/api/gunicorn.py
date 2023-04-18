@@ -55,7 +55,7 @@ class StandaloneApplication(BaseApplication):  # type: ignore[misc]
 
 
 def create_gunicorn_server(
-    app: FastAPI, host: str, port: int, workers: int, **kwargs: dict[str, Any]
+    app: FastAPI, host: str, port: int, workers: int, **kwargs: Any
 ) -> StandaloneApplication:
     """Create a gunicorn server for the API app."""
     server_config = {
