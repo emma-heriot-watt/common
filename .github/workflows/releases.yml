@@ -111,7 +111,7 @@ jobs:
           echo "WORKFLOW_INPUTS=${WORKFLOW_INPUTS//\'/\"}" >> $GITHUB_OUTPUT
 
       - name: Dispatch
-        uses: pauldraper/workflow-dispatch@v1.5
+        uses: pauldraper/workflow-dispatch@v1.6
         with:
           repo: emma-simbot/pypi
           token: ${{ secrets.PAT }}
