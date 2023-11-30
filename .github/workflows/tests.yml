@@ -46,7 +46,7 @@ jobs:
       run:
         shell: bash
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: [changes]
     if: ${{needs.changes.outputs.python == 'true' && !github.event.pull_request.draft }}
     steps:
