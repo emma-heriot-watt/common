@@ -2,7 +2,6 @@
 
 # EMMA: Common
 
-
 <a href="https://www.python.org/">
   <img alt="Python 3.9" src="https://img.shields.io/badge/-Python 3.9+-blue?logo=python&logoColor=white">
 </a>
